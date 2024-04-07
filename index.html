@@ -6,5 +6,102 @@
     <link rel="stylesheet" href="/dist/css/main.css" />
     <title>Rating Component</title>
   </head>
-  <body></body>
+  <body>
+    <h1 class="visually-hidden">Interative Rating Component</h1>
+    <main class="rating">
+      <div class="rating__container container">
+        <img
+          class="rating__img--star"
+          id="star-icon"
+          src="./images/icon-star-2.svg"
+          alt=""
+        />
+        <h2 class="rating__heading" id="rating__heading">How did we do?</h2>
+        <p class="rating__text" id="rating__text">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <form class="rating__form" id="rating__radio-option__form">
+          <fieldset class="rating__content">
+            <legend class="visually-hidden">Please select a rating</legend>
+            <div class="rating__radio">
+              <input
+                type="radio"
+                name="rating"
+                class="rating__radio-option"
+                id="one"
+                value="1"
+              />
+              <label class="rating__number" for="one">1</label>
+            </div>
+            <div class="rating__radio">
+              <input
+                type="radio"
+                name="rating"
+                class="rating__radio-option"
+                id="two"
+                value="2"
+              />
+              <label class="rating__number" for="two">2</label>
+            </div>
+            <div class="rating__radio">
+              <input
+                type="radio"
+                name="rating"
+                class="rating__radio-option"
+                id="three"
+                value="3"
+              />
+              <label class="rating__number" for="three">3</label>
+            </div>
+            <div class="rating__radio">
+              <input
+                type="radio"
+                name="rating"
+                class="rating__radio-option"
+                id="four"
+                value="4"
+              />
+              <label class="rating__number" for="four">4</label>
+            </div>
+            <div class="rating__radio">
+              <input
+                type="radio"
+                name="rating"
+                class="rating__radio-option"
+                id="five"
+                value="5"
+              />
+              <label class="rating__number" for="five">5</label>
+            </div>
+          </fieldset>
+          <button class="submit-btn" id="btn-submit" type="submit" disabled>
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <div aria-live="polite">
+        <div
+          class="success__container container hidden"
+          id="success__container"
+        >
+          <img
+            class="success__illustration"
+            id="success__illustration"
+            src="./images/illustration-thank-you-2.svg"
+            alt=""
+          />
+          <p class="success__text--rating">
+            You selected <span class="rating" id="rating">-</span> out of 5
+          </p>
+          <h2 class="success__heading" id="success__heading">Thank you!</h2>
+          <p class="success__text" id="success__text">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
