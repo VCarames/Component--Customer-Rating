@@ -1,0 +1,9 @@
+:root {
+  --font-family: "Overpass", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --text-heading: clamp(1.38rem, calc(0.63rem + 3.75vw), 1.75rem);
+  --text-paragraph: clamp(0.88rem, calc(0.63rem + 1.25vw), 1rem);
+}
