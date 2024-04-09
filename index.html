@@ -8,95 +8,98 @@
   </head>
   <body>
     <h1 class="visually-hidden">Interative Rating Component</h1>
-    <main class="rating">
-      <div class="rating__container container">
+    <main>
+      <div class="card__rating container container--rating">
         <img
-          class="rating__img--star"
+          class="card__rating-img"
           id="star-icon"
-          src="./images/icon-star-2.svg"
+          src="./public/icon-star.svg"
           alt=""
         />
-        <h2 class="rating__heading" id="rating__heading">How did we do?</h2>
-        <p class="rating__text" id="rating__text">
+        <h2 class="card__rating-heading" id="card__rating-heading">
+          How did we do?
+        </h2>
+        <p class="card__rating-text" id="card__rating-text">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <form class="rating__form" id="rating__radio-option__form">
-          <fieldset class="rating__content">
+        <form class="card__rating-form" id="card__rating-form">
+          <fieldset class="card__rating-fieldset">
             <legend class="visually-hidden">Please select a rating</legend>
-            <div class="rating__radio">
+            <div class="card__rating-radio">
               <input
                 type="radio"
                 name="rating"
-                class="rating__radio-option"
+                class="card__rating-inputn"
                 id="one"
                 value="1"
               />
-              <label class="rating__number" for="one">1</label>
+              <label class="card__rating-number" for="one">1</label>
             </div>
-            <div class="rating__radio">
+            <div class="card__rating-radio">
               <input
                 type="radio"
                 name="rating"
-                class="rating__radio-option"
+                class="card__rating-input"
                 id="two"
                 value="2"
               />
-              <label class="rating__number" for="two">2</label>
+              <label class="card__rating-label" for="two">2</label>
             </div>
-            <div class="rating__radio">
+            <div class="card__rating-radio">
               <input
                 type="radio"
                 name="rating"
-                class="rating__radio-option"
+                class="card__rating-input"
                 id="three"
                 value="3"
               />
-              <label class="rating__number" for="three">3</label>
+              <label class="card__rating-label" for="three">3</label>
             </div>
-            <div class="rating__radio">
+            <div class="card__rating-radio">
               <input
                 type="radio"
                 name="rating"
-                class="rating__radio-option"
+                class="card__rating-input"
                 id="four"
                 value="4"
               />
-              <label class="rating__number" for="four">4</label>
+              <label class="card__rating-label" for="four">4</label>
             </div>
-            <div class="rating__radio">
+            <div class="card__rating-radio">
               <input
                 type="radio"
                 name="rating"
-                class="rating__radio-option"
+                class="card__rating-input"
                 id="five"
                 value="5"
               />
-              <label class="rating__number" for="five">5</label>
+              <label class="card__rating-label" for="five">5</label>
             </div>
           </fieldset>
-          <button class="submit-btn" id="btn-submit" type="submit" disabled>
+          <button
+            class="card__rating-btn"
+            id="card__rating-btn"
+            type="submit"
+            disabled
+          >
             Submit
           </button>
         </form>
       </div>
 
       <div aria-live="polite">
-        <div
-          class="success__container container hidden"
-          id="success__container"
-        >
+        <div class="card__success container container--success hidden">
           <img
-            class="success__illustration"
-            id="success__illustration"
-            src="./images/illustration-thank-you-2.svg"
+            class="card__success-img"
+            src="./public/illustration-thank-you.svg"
             alt=""
           />
-          <p class="success__text--rating">
+          <p class="card__success-text--one success-text">
             You selected <span class="rating" id="rating">-</span> out of 5
           </p>
-          <h2 class="success__heading" id="success__heading">Thank you!</h2>
-          <p class="success__text" id="success__text">
+          <h2 class="card__success-heading">Thank you!</h2>
+          <p class="card__success-text--two">
             We appreciate you taking the time to give a rating. If you ever need
             more support, don’t hesitate to get in touch!
           </p>

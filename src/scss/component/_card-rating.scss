@@ -1,0 +1,209 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--background-body);
+  background: linear-gradient(
+    -45deg,
+    hsl(0, 50%, 1%, 1) 0%,
+    hsl(336, 58%, 14%, 1) 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+  padding: 10px;
+}
+
+// @keyframes gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
+
+.container {
+  max-width: 25.63rem;
+  font-family: var(--font-family);
+
+  padding: 1.25rem;
+
+  border-radius: 1.88rem 7.5rem 1.88rem 1.88rem;
+  background: var(--background-card);
+}
+
+.card__rating {
+  @media (min-width: 25em) {
+    padding: 2rem;
+  }
+
+  &-img {
+    padding: 1.06rem;
+    border-radius: 1.88rem;
+    margin-bottom: 1.25rem;
+    background: rgb(80, 12, 39);
+    box-shadow: 0 0 0.94rem 0.19rem rgba(0, 0, 0, 0.2);
+  }
+
+  &-heading {
+    font-size: var(--text-heading);
+    font-weight: var(--fw-700);
+    color: var(--primary-clr-three);
+
+    margin-bottom: 0.88rem;
+
+    @media (min-width: 25em) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-text {
+    font-size: var(--text-paragraph);
+    font-weight: var(--fw-400);
+    line-height: 1.6;
+    color: var(--primary-clr-four);
+    margin-bottom: 0.88rem;
+
+    @media (min-width: 25em) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &-fieldset {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.63rem;
+    border: none;
+  }
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  font-size: var(--text-paragraph);
+  color: var(--primary-clr-four);
+
+  padding: 0.69rem 1.13rem;
+  border-radius: 3.13rem;
+
+  border: 1px solid hsl(0, 71%, 4%, 0.2);
+  background: transparent;
+  cursor: pointer;
+
+  @media (min-width: 25em) {
+    padding: 0.88rem 1.38rem;
+    border-radius: 3.13rem;
+  }
+}
+
+input[type="radio"]:checked + label {
+  background: var(--primary-clr-two);
+  color: var(--primary-clr-three);
+}
+
+input[type="radio"] + label:is(:hover, :focus-visible) {
+  color: var(--primary-clr-three);
+  background: var(--primary-clr-one);
+
+  transition: var(--transition);
+}
+
+input[type="radio"]:focus + label {
+  background: var(--primary-clr-one);
+}
+
+.card__rating-btn:disabled {
+  background: var(--disabled);
+  border: 1px solid hsl(0, 71%, 4%, 0.2);
+}
+
+.card__rating-btn:disabled:is(:hover, :focus-visible) {
+  color: var(--primary-clr-three);
+  background: var(--disabled);
+}
+
+.card__rating-btn {
+  font-size: 0.94rem;
+  font-weight: var(--fw-700);
+  color: var(--primary-clr-three);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 0.81rem 2rem;
+  border-radius: 1.88rem;
+  background: var(--primary-clr-one);
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  &:is(:hover, :focus, :focus-visible, :active) {
+    color: var(--primary-clr-one);
+    background: var(--primary-clr-three);
+    outline: var(--primary-clr-three);
+  }
+}
+
+.card__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+
+  @media (min-width: 25em) {
+    padding: 2.75rem;
+  }
+
+  &-img {
+    max-width: 7.5rem;
+    margin-bottom: 1.88rem;
+
+    @media (min-width: 25em) {
+      max-width: 100%;
+    }
+  }
+
+  &-heading {
+    font-size: var(--text-heading);
+    color: var(--primary-clr-three);
+
+    margin-bottom: 1.13rem;
+
+    @media (min-width: 25em) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-text--one {
+    max-width: 25ch;
+    font-size: 0.94rem;
+    color: var(--primary-clr-three);
+
+    padding: 6px 20px;
+    margin-bottom: 1.88rem;
+    border-radius: 1.88rem;
+
+    background: var(--primary-clr-one);
+    box-shadow: 0 0 0.94rem 0.19rem rgba(0, 0, 0, 0.1);
+  }
+
+  &-text--two {
+    font-size: var(--text-paragraph);
+    font-weight: var(--fw-400);
+    line-height: 1.6;
+    color: var(--primary-clr-four);
+  }
+}
+
+.hidden {
+  display: none;
+}
