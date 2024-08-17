@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --primary-clr-one: hsl(336, 76%, 37%, 1);
+  --primary-clr-two: rgba(200, 3, 82, 0.3);
+  --primary-clr-three: hsl(0, 0%, 100%);
+  --primary-clr-four: hsl(0, 0%, 100%, 0.8);
+  --disabled: transparent;
+  --background-body: linear-gradient
+    (
+      -45deg,
+      hsla(0, 60%, 1%, 1) 0%,
+      hsla(335, 58%, 7%, 1) 50%,
+      hsla(335, 58%, 27%, 1) 100%
+    );
+  --background-card: linear-gradient(
+    315deg,
+    hsl(0, 71%, 4%, 0.8) 0%,
+    hsl(336, 62%, 44%, 0.8) 100%
+  );
+  --transition: 0.8s all;
+}
+
+:root {
+  --font-family: "Overpass", sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
+  --text-heading: clamp(1.38rem, calc(0.63rem + 3.75vw), 1.75rem);
+  --text-paragraph: clamp(0.88rem, calc(0.63rem + 1.25vw), 1rem);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--background-body);
+  background: linear-gradient(-45deg, hsl(0, 50%, 1%) 0%, hsl(336, 58%, 14%) 100%);
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+  padding: 10px;
+}
+
+.container {
+  max-width: 25.63rem;
+  font-family: var(--font-family);
+  padding: 1.25rem;
+  border-radius: 1.88rem 7.5rem 1.88rem 1.88rem;
+  background: var(--background-card);
+}
+
+@media (min-width: 25em) {
+  .card__rating {
+    padding: 2rem;
+  }
+}
+.card__rating-img {
+  padding: 1.06rem;
+  border-radius: 1.88rem;
+  margin-bottom: 1.25rem;
+  background: rgb(80, 12, 39);
+  box-shadow: 0 0 0.94rem 0.19rem rgba(0, 0, 0, 0.2);
+}
+.card__rating-heading {
+  font-size: var(--text-heading);
+  font-weight: var(--fw-700);
+  color: var(--primary-clr-three);
+  margin-bottom: 0.88rem;
+}
+@media (min-width: 25em) {
+  .card__rating-heading {
+    margin-bottom: 0.5rem;
+  }
+}
+.card__rating-text {
+  font-size: var(--text-paragraph);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  color: var(--primary-clr-four);
+  margin-bottom: 0.88rem;
+}
+@media (min-width: 25em) {
+  .card__rating-text {
+    margin-bottom: 1.5rem;
+  }
+}
+.card__rating-fieldset {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.63rem;
+  border: none;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+}
+
+input[type=radio] + label {
+  display: inline-block;
+  font-size: var(--text-paragraph);
+  color: var(--primary-clr-four);
+  padding: 0.69rem 1.13rem;
+  border-radius: 3.13rem;
+  border: 1px solid hsla(0, 71%, 4%, 0.2);
+  background: transparent;
+  cursor: pointer;
+}
+@media (min-width: 25em) {
+  input[type=radio] + label {
+    padding: 0.88rem 1.38rem;
+    border-radius: 3.13rem;
+  }
+}
+
+input[type=radio]:checked + label {
+  background: var(--primary-clr-two);
+  color: var(--primary-clr-three);
+}
+
+input[type=radio] + label:is(:hover, :focus-visible) {
+  color: var(--primary-clr-three);
+  background: var(--primary-clr-one);
+  transition: var(--transition);
+}
+
+input[type=radio]:focus + label {
+  background: var(--primary-clr-one);
+}
+
+.card__rating-btn:disabled {
+  background: var(--disabled);
+  border: 1px solid hsla(0, 71%, 4%, 0.2);
+}
+
+.card__rating-btn:disabled:is(:hover, :focus-visible) {
+  color: var(--primary-clr-three);
+  background: var(--disabled);
+}
+
+.card__rating-btn {
+  font-size: 0.94rem;
+  font-weight: var(--fw-700);
+  color: var(--primary-clr-three);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 0.81rem 2rem;
+  border-radius: 1.88rem;
+  background: var(--primary-clr-one);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.card__rating-btn:is(:hover, :focus, :focus-visible, :active) {
+  color: var(--primary-clr-one);
+  background: var(--primary-clr-three);
+  outline: var(--primary-clr-three);
+}
+
+.card__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+}
+@media (min-width: 25em) {
+  .card__success {
+    padding: 2.75rem;
+  }
+}
+.card__success-img {
+  max-width: 7.5rem;
+  margin-bottom: 1.88rem;
+}
+@media (min-width: 25em) {
+  .card__success-img {
+    max-width: 100%;
+  }
+}
+.card__success-heading {
+  font-size: var(--text-heading);
+  color: var(--primary-clr-three);
+  margin-bottom: 1.13rem;
+}
+@media (min-width: 25em) {
+  .card__success-heading {
+    margin-bottom: 0.5rem;
+  }
+}
+.card__success-text--one {
+  max-width: 25ch;
+  font-size: 0.94rem;
+  color: var(--primary-clr-three);
+  padding: 6px 20px;
+  margin-bottom: 1.88rem;
+  border-radius: 1.88rem;
+  background: var(--primary-clr-one);
+  box-shadow: 0 0 0.94rem 0.19rem rgba(0, 0, 0, 0.1);
+}
+.card__success-text--two {
+  font-size: var(--text-paragraph);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  color: var(--primary-clr-four);
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */
